@@ -32,11 +32,15 @@ const TabLayout = () => {
 
   return (
     <>
+      {/* Buttom navigation panel */}
       <Tabs
         screenOptions={{
+          // Color of Active button
           tabBarActiveTintColor: "#FFA001",
+          // Color on Inactive button
           tabBarInactiveTintColor: "#CDCDE0",
           tabBarShowLabel: false,
+          // Styles of Tab Bar
           tabBarStyle: {
             backgroundColor: "#161622",
             borderTopWidth: 1,
@@ -45,12 +49,14 @@ const TabLayout = () => {
           },
         }}
       >
+        {/* Configuration of button */}
         <Tabs.Screen
           name="home"
           options={{
             title: "Home",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
+              // Icon of Button
               <TabIcon
                 icon={icons.home}
                 color={color}

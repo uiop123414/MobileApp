@@ -9,6 +9,7 @@ import GlobalProvider from "../context/GlobalProvider";
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
+  // In this useFonts we get fonts or error
   const [fontsLoaded, error] = useFonts({
     "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
@@ -22,6 +23,7 @@ const RootLayout = () => {
   });
 
   useEffect(() => {
+    // In this useEffect we check if we loaded fonts correct
     if (error) throw error;
 
     if (fontsLoaded) {
