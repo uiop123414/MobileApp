@@ -32,7 +32,22 @@
   },
   "devDependencies": {
     "@babel/core": "^7.24.3",
+    "@testing-library/react-native": "^12.5.1",
+    "detox": "^20.23.0",
+    "jest": "^29.7.0",
     "tailwindcss": "3.3.2"
   },
-  "private": true
+  "private": true,
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/YourApp.app",
+        "build": "xcodebuild -workspace ios/YourApp.xcworkspace -scheme YourApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "device": {
+          "type": "iPhone 11"
+        }
+      }
+    }
+  }
 }
